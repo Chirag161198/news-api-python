@@ -25,15 +25,16 @@ def NewsJSON(query):
     source_code = requests.get(url)
     plain_text = source_code.text
     soup = BeautifulSoup(plain_text,features='html.parser')
-    headlines = soup.findAll('h1',itemprop='headline')
+    headlines = soup.find_all('a',"css-118lm29-PromoLink ett16tt7")
 
     data = []
     for item in headlines:
-        tag = item.find('a')
+        print(item)
+        tag = item.find('span')
         news = {
             'title' : tag.text,
             'category' : encoder.inverse_transform(pipeline.predict([tag.text]))[0],
-            'link' : tag['href']
+            'link' : item['href']
         }
         data.append(news)
 
