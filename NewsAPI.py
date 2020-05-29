@@ -6,7 +6,7 @@ from sklearn.pipeline import Pipeline
 from flask import Flask, send_from_directory
 import os
 
-app = Flask(__name__,static_folder='./dist')
+app = Flask(__name__,static_folder='./Public')
 
 with open('Modules/LogisticRegression.pickle','rb') as f:
     logisticRegression = pickle.load(f)
@@ -29,7 +29,6 @@ def NewsJSON(query):
 
     data = []
     for item in headlines:
-        print(item)
         tag = item.find('span')
         news = {
             'title' : tag.text,
@@ -64,4 +63,4 @@ def emptyquery():
     }])
 
 if __name__ == '__main__':
-   app.run()
+   app.run(host='0.0.0.0', port=80)

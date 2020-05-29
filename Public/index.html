@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News API</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold text-light" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold text-light" href="#documentation">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold text-light" href="#tryit">Try it</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold text-light" href="#contactus">Contact Us</a>
+                    </li>
+                </div>
+            </div>
+        </nav>  
+        <div class="container-fluid landing-page"></div>
+        <div class="container-fluid landing-text-container">
+            <p id="heading">News API</p>
+        </div>
+        
+        <div class="container" id="about">
+            <p class="sub-heading">About</p>
+            <p class="text-justify content">
+                News API was built to present my natural language processing (NLP) classifier to categorise news under different topics.
+                It does not depend upon any third party API, rather it scrapes news headlines from different website.
+            </p>
+        </div>
+        <div class="container-fluid" id="documentation">
+            <div class="container">
+                <p class="sub-heading">Documentation</p>
+                <table class="table table-hover table-responsive-md table-striped table-dark">
+                    <tbody>
+                        <tr>
+                            <td>Endpoint</td>
+                            <td>/news/:query</td>
+                        </tr>
+                        <tr>
+                            <td>Parameters</td>
+                            <td>query: (required) search for particular news</td>
+                        </tr>
+                        <tr>
+                            <td>Response</td>
+                            <td>JSON object with fields:<br/>title<br/>category<br/>link</td>
+                        </tr>
+                        <tr>
+                            <td>Categories</td>
+                            <td>Business<br/>Crime<br/>Education<br/>Entertainment<br/>Politics<br/>Sports<br/>Technology and science<br/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="container" id="tryit">
+            <p class="sub-heading">Try API</p>
+            <form onsubmit="return getNews()">
+                <div class="form-group">
+                    <label for="query">Query<span class="text-danger"> *</span></label>
+                    <input id="query-input" type="text" class="form-control" placeholder="Query can be of multiple words separated by single space">
+                </div>
+                <button type="submit" class="btn btn-outline-dark">Get News</button>
+                <textarea readonly placeholder="JSON response" class="bg-dark text-white" name="query-output" id="query-output"></textarea>
+            </form>
+        </div>
+
+        <div class="container-fluid" id="contactus">
+            <div class="container">
+                <p class="sub-heading">Contact Us</p>
+                <p class="content">Developed by Chirag Tutlani</p>
+                <p class="content">&copy; 2020</p>
+                <div class="icons">
+                    <a class="btn btn-outline-dark" href="https://www.linkedin.com/in/chiragtutlani/" target="_blank"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a>
+                    <a class="btn btn-outline-dark" href="https://github.com/ChiragTutlani/" target="_blank"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
+                    <a class="btn btn-outline-dark" href="mailto:chirag161198@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+    <script src="https://use.fontawesome.com/041cd42854.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
