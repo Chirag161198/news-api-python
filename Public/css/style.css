@@ -20,14 +20,14 @@
 }
 
 #heading {
-    font-size: 14vw;
+    font-size: 10vw;
     font-weight: bolder;
     font-family: 'PT Serif Caption', serif;
     text-shadow: 2px 2px grey;
 }
 
 .sub-heading {
-    font-size: 8vw;
+    font-size: 4vw;
     font-weight: 600;
     text-align: center;
     font-family: 'News Cycle', sans-serif;
@@ -35,7 +35,7 @@
 
 .nav-link {
     font-family: 'News Cycle', sans-serif;
-    font-size: 1.6vw;
+    font-size: 1.2vw;
 }
 
 #about {
@@ -76,7 +76,15 @@
 }
 
 @media (max-width: 768px){
+    #heading {
+        font-size: 14vw;
+    }
+    
+    .sub-heading {
+        font-size: 8vw;
+    }
+
     .nav-link {
-        font-size: 2vw;
+        font-size: 3.5vw;
     }
 }
